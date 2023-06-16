@@ -1,0 +1,18 @@
+@font-face {
+  font-family: vazirf;
+  src: url("../fonts/Vazir.ttf");
+}
+
+@font-face {
+  font-family: vazir-digit;
+  src: url("../fonts/Vazir-FD.ttf");
+}
+
+body {
+  font-family: vazirf, sans-serif;
+}
+
+.digitfont {
+  font-family: vazir-digit;
+
+}
