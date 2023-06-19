@@ -14,9 +14,7 @@
     require_once('./Config/common.php');
     $db = new Db();
     $result = $db->first("select * from hemayat");
-    // $db->first("select * from hemayat");
-    dump($result);
-
+    echo $result['Month'];
     ?>
 </body>
 
