@@ -8,10 +8,10 @@ function dump($var, $return = false)
     } else {
         $out = $var;
     }
-    if ($return)
+    if ($return) {
         return "\n<pre>$out</pre>\n";
-    else
-        echo "<pre>$out</pre>";
-
-    // return
+        echo "reterned";
+    } else {
+        echo "<pre> $out</pre>";
+    }
 }

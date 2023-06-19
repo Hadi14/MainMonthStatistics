@@ -1,6 +1,10 @@
-<? class Db
+<?
+class Db
 {
   private $connect;
+
+
+
   /*********** Constructor **************** */
   public function __construct($options = null)
   {
@@ -24,14 +28,16 @@
     }
     $this->connect->query("SET NAMES 'utf8'");
   }
+
+
   /*********** First Record **************** */
   public function first($sql)
   {
-    $result = $this->connect->query($sql);
-    if ($result->num_rows == 0) {
+    $result = $this->doquery($sql);
+    if ($result == null) {
       return null;
     }
-    return $result[0];
+    dump($result[0]);
   }
 
 
@@ -49,15 +55,23 @@
     return $records;
   }
 
+
+
   /*********** connection open **************** */
   public function connection()
   {
     return $this->connect;
   }
+
+
+
   /*********** connection close **************** */
   public function close()
   {
     $this->connect->close();
   }
+
+
+
   /*********** Run Query **************** */
 }

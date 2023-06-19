@@ -13,7 +13,8 @@
     require_once('./Config/db.php');
     require_once('./Config/common.php');
     $db = new Db();
-    $result = $db->doquery("select * from hemayat");
+    $result = $db->first("select * from hemayat");
+    // $db->first("select * from hemayat");
     dump($result);
 
     ?>
