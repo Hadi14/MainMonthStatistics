@@ -31,13 +31,16 @@ class Db
 
 
   /*********** First Record **************** */
-  public function first($sql)
+  public function first($sql, $return = false)
   {
     $result = $this->doquery($sql);
     if ($result == null) {
       return null;
     }
-    dump($result[0]);
+    if ($return)
+      return $result[0];
+    else
+      dump($result[0]);
   }
 
 

@@ -13,8 +13,10 @@
     require_once('./Config/db.php');
     require_once('./Config/common.php');
     $db = new Db();
-    $result = $db->first("select * from hemayat");
-    echo $result['Month'];
+    $result = $db->first("select * from hemayat", true);
+    // echo $result['Month'];
+    echo $result['Year'];
+
     ?>
 </body>
 
