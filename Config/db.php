@@ -4,7 +4,7 @@ class Db
   private $connect;
   private static $db;
 
-
+  /** */
   /*********** Constructor **************** */
   private function __construct($options = null)
   {
