@@ -12,7 +12,7 @@
     require_once('./Config/config.php');
     require_once('./Config/db.php');
     require_once('./Config/common.php');
-    $db = new Db();
+    $db =Db::getInstance();
     $result = $db->first("select * from hemayat", true);
     // echo $result['Month'];
     echo $result['Year'];

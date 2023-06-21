@@ -2,11 +2,11 @@
 class Db
 {
   private $connect;
-
+  private static $db;
 
 
   /*********** Constructor **************** */
-  public function __construct($options = null)
+  private function __construct($options = null)
   {
     if ($options != null) {
       $host = $options['host'];
@@ -28,8 +28,13 @@ class Db
     }
     $this->connect->query("SET NAMES 'utf8'");
   }
-
-
+  /*********** Get Instance **************** */
+  public static function getInstance($option = false)
+  {
+    if (self::$db == null)
+      self::$db = new Db($option);
+    return self::$db;
+  }
   /*********** First Record **************** */
   public function first($sql, $return = false)
   {
