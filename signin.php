@@ -18,6 +18,19 @@
 <!-- HADI -->
 
 <body id="signin-body">
+  <?
+  require_once("./Config/main.php");
+  $uname = "hadi";
+  $pass = "1";
+
+  $db = Db::getInstance();
+  $record = $db->doquery("select * from users where user='$uname'");
+  if ($record) {
+    echo "SUCCESS";
+  } else {
+    echo "FAIL";
+  }
+  ?>
   <div class="layer"></div>
   <main class="page-center">
     <article class="sign-up">
@@ -48,6 +61,8 @@
   <!-- Custom scripts -->
   <script src="js/script.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+
+
 </body>
 
 </html>
