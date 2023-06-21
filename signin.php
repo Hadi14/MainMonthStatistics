@@ -20,13 +20,16 @@
 <body id="signin-body">
   <?
   require_once("./Config/main.php");
-  $uname = "hadi";
-  $pass = "1";
+  $uname = "hadgi";
+  $pass = "123";
 
   $db = Db::getInstance();
-  $record = $db->doquery("select * from users where user='$uname'");
-  if ($record) {
-    echo "SUCCESS";
+  $record = $db->first("select * from users where user='$uname'");
+
+  if ($record && $record['password'] == $pass) {
+    // echo "SUCCESS";
+    // dump($record['password']);
+    header("Location: index.html");
   } else {
     echo "FAIL";
   }
@@ -36,7 +39,7 @@
     <article class="sign-up">
       <h1 class="sign-up__title">خوش برگشتی!</h1>
       <p class="sign-up__subtitle">برای ورود نام کاربری و رمز عبور را وارد کن</p>
-      <form class="sign-up-form form" action="" method="">
+      <form class="sign-up-form form" action="" method="get">
         <label class="form-label-wrapper">
           <p class="form-label">نام کاربری</p>
           <input class="form-input" type="text" placeholder="نام کاربری" required>
@@ -47,7 +50,7 @@
         </label>
         <a class="link-info forget-link" href="##">رمز را فراموش کرده اید؟</a>
         <label class="form-checkbox-wrapper">
-          <input class="form-checkbox" type="checkbox" required>
+          <input class="form-checkbox" type="checkbox">
           <span class="form-checkbox-label mx-1">مرا به خاطر بسپار</span>
         </label>
         <button class="form-btn primary-default-btn transparent-btn">ورود</button>

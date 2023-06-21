@@ -36,7 +36,7 @@ class Db
     return self::$db;
   }
   /*********** First Record **************** */
-  public function first($sql, $return = false)
+  public function first($sql, $return = true)
   {
     $result = $this->doquery($sql);
     if ($result == null) {
