@@ -19,17 +19,20 @@
 
 <body id="signin-body">
   <?
-  require_once("./Config/main.php");
 
-  $db = Db::getInstance();
-  $un = $_GET['uname'];
-  $record = $db->first("select * from users where user='$un'");
+  if (isset($_GET['submit'])) {
+    require_once("./Config/main.php");
 
-  if ($record && $record['password'] == $_GET['pass']) {
+    $db = Db::getInstance();
+    $un = $_GET['uname'];
+    $record = $db->first("select * from users where user='$un'");
 
-    header("Location: index.html");
-  } else {
-    echo "FAIL" . "مشکل بررسی یوزر و  پسورد بعد از لود صفحه";
+    if ($record && $record['password'] == $_GET['pass']) {
+
+      header("Location: index.php");
+    } else {
+      echo "Fail to Login...";
+    }
   }
   ?>
   <div class="layer"></div>
@@ -51,7 +54,7 @@
           <input name="remember-me" class="form-checkbox" type="checkbox">
           <span class="form-checkbox-label mx-1">مرا به خاطر بسپار</span>
         </label>
-        <button class="form-btn primary-default-btn transparent-btn">ورود</button>
+        <button name="submit" class="form-btn primary-default-btn transparent-btn" type="submit">ورود</button>
       </form>
     </article>
   </main>
