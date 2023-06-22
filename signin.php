@@ -20,15 +20,13 @@
 <body id="signin-body">
   <?
   require_once("./Config/main.php");
-  $uname = "hadgi";
-  $pass = "123";
 
   $db = Db::getInstance();
-  $record = $db->first("select * from users where user='$uname'");
+  $un = $_GET['uname'];
+  $record = $db->first("select * from users where user='$un'");
 
-  if ($record && $record['password'] == $pass) {
-    // echo "SUCCESS";
-    // dump($record['password']);
+  if ($record && $record['password'] == $_GET['pass']) {
+
     header("Location: index.html");
   } else {
     echo "FAIL";
