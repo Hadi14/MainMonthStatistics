@@ -29,7 +29,7 @@
 
     header("Location: index.html");
   } else {
-    echo "FAIL";
+    echo "FAIL" . "مشکل بررسی یوزر و  پسورد بعد از لود صفحه";
   }
   ?>
   <div class="layer"></div>
