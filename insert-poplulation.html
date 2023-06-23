@@ -15,7 +15,20 @@
   <link rel="stylesheet" href="./css/font.css">
   <link rel="stylesheet" href="./css/Custome-style.css">
   <link rel="stylesheet" href="./css/all.min.css">
+  <style>
+    .input-group::after {
+      content: "*";
+      display: flex;
+      align-items: center;
+      font-size: large;
+      /* color: red; */
 
+    }
+
+    input+:after {
+      color: red;
+    }
+  </style>
 </head>
 
 <body>
