@@ -3,3 +3,13 @@
     color: #24e98d;
     margin-left: 5px;
 }
+
+input:invalid+ ::after {
+    content: "*";
+    color: red;
+}
+
+input:valid+ ::after {
+    content: "*";
+    color: green;
+}
